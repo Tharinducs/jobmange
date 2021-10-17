@@ -2,6 +2,7 @@ var bcrypt = require("bcryptjs");
 var sql = require("../db.js");
 
 module.exports.save_user = (user, callback) => {
+   console.log("Hiii",user)
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(user.password, salt, (err, hash) => {
       user.password = hash;
